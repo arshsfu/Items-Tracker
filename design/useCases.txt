@@ -1,0 +1,78 @@
+USE CASE 1 – LIST ALL ITEMS
+
+Primary Actor:
+User
+
+Main Success Scenario:
+
+1. User starts the application.
+2. System displays the main menu.
+3. User selects option 1 (List all items).
+4. System retrieves all loan items from LoanItemManager.
+5. System sorts the items by due date.
+6. System displays all loan items with their information.
+7. User returns to the main menu.
+
+Variant:
+
+4a. No loan items exist.
+4a.1 System displays "No items to show."
+4a.2 User returns to the main menu.
+
+USE CASE 2 – ADD ITEM
+
+Primary Actor:
+User
+
+Main Success Scenario:
+
+1. User selects option 2 (Add item).
+2. System prompts for item name.
+3. User enters item name.
+4. System prompts for due date.
+5. User enters a valid date.
+6. System prompts for publisher.
+7. User enters publisher.
+8. System prompts for loaned-to name.
+9. User enters loaned-to name.
+10. System prompts for item type.
+11. User selects Book, Audio, or Video.
+12. System prompts for type-specific information.
+13. User enters valid information.
+14. System creates the item using LoanItemFactory.
+15. System adds the item to LoanItemManager.
+16. System confirms the item was added.
+
+Variants:
+
+5a. Invalid date entered.
+5a.1 System displays an error message.
+5a.2 System requests another date.
+
+13a. Invalid pages, duration, or genre entered.
+13a.1 System displays an error message.
+13a.2 System requests corrected information.
+
+USE CASE 3 – REMOVE ITEM
+
+Primary Actor:
+User
+
+Main Success Scenario:
+
+1. User selects option 3 (Remove item).
+2. System displays all loan items.
+3. User enters the item number to remove.
+4. System removes the selected item from LoanItemManager.
+5. System confirms the removal.
+6. User returns to the main menu.
+
+Variant:
+
+3a. User enters 0.
+3a.1 System cancels the operation.
+3a.2 User returns to the main menu.
+
+3b. User enters an invalid item number.
+3b.1 System displays an error message.
+3b.2 System requests another item number.

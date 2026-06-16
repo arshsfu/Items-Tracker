@@ -1,0 +1,19 @@
+OOD EXPLAINED
+
+Use Case 1: Creating a Loan Item
+
+The application uses several classes working together to create a loan item. The TextUI class is responsible for interacting with the user and collecting all required information such as name, due date, publisher, loaned-to name, and item type. The TextUI class does not directly create objects. Instead, it delegates object creation to LoanItemFactory.
+
+LoanItemFactory follows the Factory Method design pattern. Based on the item type selected by the user, the factory creates a Book, Audio, or Video object. These classes all inherit from the abstract LoanItem class, allowing the rest of the system to treat all loan items uniformly.
+
+After the object is created, it is passed to LoanItemManager. LoanItemManager stores all loan items in an ArrayList and is responsible for maintaining the collection. This design separates user interface responsibilities from business logic responsibilities and improves maintainability and extensibility.
+
+Use Case 2: Saving and Loading Loan Items
+
+The application automatically saves and loads loan items using JSON. LoanItemManager is responsible for file persistence. When the application exits, LoanItemManager converts all loan items into JSON format and stores them in list.json.
+
+Because the application contains multiple subclasses of LoanItem, RuntimeTypeAdapterFactory is used together with Gson. This allows Gson to preserve subtype information and correctly identify whether an object is a Book, Audio, or Video when reading the JSON file.
+
+LocalDateAdapter and DurationAdapter are used to serialize and deserialize LocalDate and Duration objects, which are not directly supported by Gson. During application startup, LoanItemManager loads the JSON file, recreates the appropriate loan item objects, and restores them to memory.
+
+This design centralizes persistence responsibilities inside LoanItemManager and keeps file handling separate from both the user interface and the individual loan item classes.

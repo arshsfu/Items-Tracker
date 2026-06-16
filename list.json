@@ -1,0 +1,23 @@
+[
+  {
+    "length": 11106,
+    "name": "af",
+    "duedate": "2013-05-04",
+    "publisher": "kpu",
+    "loanedTo": "harman"
+  },
+  {
+    "genre": "unknown",
+    "name": "vf",
+    "duedate": "2016-04-06",
+    "publisher": "langara",
+    "loanedTo": "suh"
+  },
+  {
+    "pages": 34,
+    "name": "bf",
+    "duedate": "2022-04-05",
+    "publisher": "sfu",
+    "loanedTo": "arsh"
+  }
+]
