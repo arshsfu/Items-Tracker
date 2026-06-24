@@ -1,4 +1,5 @@
-OOD EXPLAINED
+Name: Arshdeep Singh
+Student No.:301560122
 
 Use Case 1: Creating a Loan Item
 
